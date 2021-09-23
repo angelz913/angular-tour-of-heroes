@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero'
-import { Heroes } from '../mock-heroes'
+import { HeroService } from '../hero.service'
 
 // a decorator function that specifies the metadata for the component
 @Component({
@@ -12,16 +12,22 @@ export class HeroesComponent implements OnInit {
 
     selectedHero?: Hero;    // optional value, undefined at first
 
-    heroes: Hero[] = Heroes;
+    heroes: Hero[] = [];
 
-    constructor() { }
+    // defines a private heroService property and identifies it as a HeroService injection site
+    constructor(private heroService: HeroService) { }
     
     // a lifecycle hook
     ngOnInit(): void {
+        this.getHeroes();
     }
     
     onSelect(hero: Hero): void {
         this.selectedHero = hero;
+    }
+
+    getHeroes(): void {
+        this.heroes = this.heroService.getHeroes();
     }
 
 }
