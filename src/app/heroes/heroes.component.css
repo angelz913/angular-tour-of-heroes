@@ -1,5 +1,6 @@
-/* HeroesComponent's private CSS styles */
-/* only to the HeroesComponent and don't affect the outer HTML or the HTML in any other component. */
+/* HeroesComponent's private CSS styles 
+   only to the HeroesComponent
+   don't affect the outer HTML or the HTML in any other component. */
 .heroes {
   margin: 0 0 2em 0;
   list-style-type: none;
