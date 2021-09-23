@@ -9,13 +9,6 @@
         <span class="badge">{{ hero.id }}</span> {{ hero.name }}
     </li>
 </ul>
-<!-- *ngIf only creates the element if the condition is true -->
-<!-- in this case the condition is "selectedHero is defined" -->
-<div *ngIf="selectedHero">
-    <h2>{{ selectedHero.name | uppercase }} Details</h2>
-    <div><span>id: </span>{{ selectedHero.id }}</div>
-    <div>
-        <label for="hero-name">Hero name: </label>
-        <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
-    </div>
-</div>
+<!-- [hero] is the one way property binding from the selectedHero property of the HeroesComponent to the hero property of theHeroDetailComponent -->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
