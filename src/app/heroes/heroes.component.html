@@ -5,8 +5,10 @@
     <!-- (click) is an event binding syntax -->
     <!-- [class.some-class-name] is a class binding syntax -->
     <!-- adds a class to the element if the condition is true -->
-    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-        <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+    <li *ngFor="let hero of heroes">
+        <a routerLink="/detail/{{ hero.id }}">
+            <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+        </a>
     </li>
 </ul>
 <!-- [hero] is the one way property binding from the selectedHero property of the HeroesComponent to the hero property of theHeroDetailComponent -->

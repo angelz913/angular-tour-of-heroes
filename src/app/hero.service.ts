@@ -12,6 +12,13 @@ export class HeroService {
     // service in service
     constructor(private messageService: MessageService) { }
 
+    getHero(id: number): Observable<Hero> {
+        // ! means you're certain that the object is not undefined
+        const hero = Heroes.find(x => x.id === id)!; 
+        this.messageService.add(`HeroService: fetched hero id=${id}`);
+        return of(hero);
+    }
+
     getHeroes(): Observable<Hero[]> {
         const heroes = of(Heroes);
         this.messageService.add('HeroService: fetched heroes');
