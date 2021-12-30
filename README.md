@@ -28,4 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Acknowledgement
 
-I followed and used code from [Tour of Heroes app and tutorial](https://angular.io/tutorial)
+I followed and used code from [Tour of Heroes app and tutorial](https://angular.io/tutorial).
